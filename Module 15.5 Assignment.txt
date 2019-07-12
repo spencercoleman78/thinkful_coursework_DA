@@ -1,0 +1,108 @@
+1. SELECT
+     COUNT(*)
+FROM vehicles
+
+33442 records
+
+2. SELECT
+     *
+FROM vehicles
+
+3. SELECT
+     id,
+     make,
+     model
+FROM vehicles
+WHERE year = 2010
+
+4. SELECT
+     COUNT(id)
+FROM vehicles
+WHERE year = 2010
+
+1109 vehicles
+
+5. SELECT
+     COUNT(id)
+FROM vehicles
+WHERE year IN (2010, 2011, 2012, 2013, 2014, 2015)
+
+5995 vehicles
+
+6. SELECT
+     COUNT(id)
+FROM vehicles
+WHERE year IN (1990, 2000, 2010)
+
+3026 vehicles
+
+7. SELECT
+     COUNT(id)
+FROM vehicles
+WHERE (year NOT IN (1990, 2000)) AND (year BETWEEN 1987 AND 2005)
+
+17235 vehicles
+
+8. SELECT
+     year,
+     make,
+     model,
+     (hwy + cty)/2 AS average_mpg
+FROM vehicles
+
+9. SELECT
+     year,
+     make,
+     model,
+     CONCAT(hwy, ' highway; ', cty, ' city') AS hwy_cty
+FROM vehicles
+
+10. SELECT
+     id,
+     make,
+     model,
+     year
+FROM vehicles
+WHERE cyl IS NULL OR displ IS NULL
+
+11. SELECT
+     *
+FROM vehicles
+WHERE (drive IN ('Rear-Wheel Drive')) AND (fuel IN ('Diesel')) AND (year >= 2000)
+
+12. SELECT
+     COUNT(id)
+FROM vehicles
+WHERE (make IN ('Ford', 'Chevrolet')) AND (class IN ('Compact Cars', 'Two Seaters'))
+
+612 vehicles
+
+13. SELECT
+     *
+FROM vehicles
+ORDER BY hwy DESC
+LIMIT 10
+
+14. SELECT
+     *
+FROM vehicles
+WHERE year > 2000 AND model LIKE 'X%'
+
+15. SELECT
+     COUNT(*)
+FROM vehicles
+WHERE cyl IS NULL
+
+58 records
+
+16. SELECT
+     COUNT(*)
+FROM vehicles
+WHERE (hwy > 20) AND (displ > 3)'
+
+6364 records
+
+17. SELECT
+     *
+FROM vehicles
+WHERE model LIKE '__X%'
