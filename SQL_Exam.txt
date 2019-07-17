@@ -1,6 +1,7 @@
 -- 1
-SELECT *
-FROM naep;
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'naep';
 
 -- 2
 SELECT *
@@ -55,7 +56,7 @@ WHERE avg_math_4_score IS NULL AND year = 2000;
 
 -- 9
 SELECT naep.state,
-       avg_math_4_score,
+       ROUND(avg_math_4_score),
        total_expenditure
 FROM naep LEFT OUTER JOIN finance ON (naep.id = finance.id)
 WHERE avg_math_4_score IS NOT NULL AND naep.year = 2000
